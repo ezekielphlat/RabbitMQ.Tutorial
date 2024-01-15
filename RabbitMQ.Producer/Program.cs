@@ -14,7 +14,7 @@ namespace RabbitMQ.Producer
             };
            using var connection = factory.CreateConnection();
            using var channel = connection.CreateModel();
-            DirectExchangeProducer.Publish(channel);
+            FanoutExchangePublisher.Publish(channel);
             Console.WriteLine("Producer Started");
 
             Console.ReadLine();
